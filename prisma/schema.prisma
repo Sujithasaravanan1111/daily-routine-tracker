@@ -41,6 +41,8 @@ model User {
   emailVerified DateTime?
   image         String?
   password      String?
+  streakCount Int @default(0)
+  lastActive DateTime?
   accounts      Account[]
   sessions      Session[]
   routines      Routine[]
