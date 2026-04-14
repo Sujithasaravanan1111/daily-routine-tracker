@@ -1,36 +1,114 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## 🌐 Live Demo
 
-## Getting Started
+👉 https://daily-routine-tracker.vercel.app
 
-First, run the development server:
+# 🚀 Daily Routine Tracker
+
+A modern full-stack productivity web application designed to help users manage their daily routines, workouts, reminders, and personal tasks — all in one place with a premium and interactive UI.
+
+---
+
+## ✨ Features
+
+- 🔐 User Authentication (Login / Signup)
+- 📅 Daily Routine Tracking
+- 🏋️ Workout Management System
+- ⏰ Reminder System with Notifications
+- 💭 Dynamic Motivational Quotes
+- 🔥 Streak Tracking System
+- 📝 Notes Management
+- 📊 Basic Analytics (Task Completion & Activity)
+- 🎨 Animated Background UI
+- 🧊 Glassmorphism Design
+- 🌀 3D Interactive UI Effects
+
+---
+
+## 🛠️ Tech Stack
+
+- **Frontend:** Next.js, React  
+- **Backend:** Next.js API Routes  
+- **Database:** Prisma ORM with SQLite (Development)  
+- **Styling:** Custom CSS (Glassmorphism + Animations)  
+- **Deployment:** Vercel (Recommended)  
+
+---
+
+## 🎯 Key Highlights
+
+- 💎 Premium SaaS-style UI design  
+- ⚡ Smooth animations and transitions  
+- 📱 Fully responsive layout  
+- 🔄 Real-time UI updates  
+- 🧠 Clean and scalable code structure  
+- 🔧 Full-stack implementation (Frontend + Backend + Database)  
+
+---
+
+## 🚀 Getting Started
+
+### 1️⃣ Clone the repository
 
 ```bash
+git clone https://github.com/Sujithasaravanan1111/DailyRoutineTracker.git
+cd DailyRoutineTracker
+
+2️⃣ Install dependencies
+npm install
+
+3️⃣ Setup database
+npx prisma generate
+npx prisma migrate dev
+
+4️⃣ Run the development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+5️⃣ Open in browser
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+👉 http://localhost:3000
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 📸 Screenshots
 
-## Learn More
+### 🔐 Login Page
+![Login](public/screenshots/login.png)
 
-To learn more about Next.js, take a look at the following resources:
+### 📊 Dashboard
+![Dashboard](public/screenshots/dashboard.png)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### 📅 Routine Tracker
+![Routine](public/screenshots/routine.png)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### ⏰ Reminder System
+![Reminder](public/screenshots/reminder.png)
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+💡 Future Enhancements
+🔔 Push Notifications (Background alerts)
+🌐 PostgreSQL Database Integration (Production Ready)
+📱 Mobile Application Version
+🤖 AI-based Habit Suggestions
+📊 Advanced Analytics Dashboard
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+⚠️ Important Notes
+The database (dev.db) is used only for local development and is not included in the repository.
+The .next build folder is ignored as it is auto-generated.
+
+👨‍💻 Author
+
+Sujitha Muthuvairavan
+
+🌟 Support
+
+If you like this project, consider giving it a ⭐ on GitHub!
+
+
+---
+
+# 🚀 NEXT STEP (VERY IMPORTANT)
+
+After pasting:
+
+```bash
+git add README.md
+git commit -m "Added professional README"
+git push
