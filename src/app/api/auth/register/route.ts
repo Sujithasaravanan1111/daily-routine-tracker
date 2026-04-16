@@ -39,8 +39,10 @@ export async function POST(req: Request) {
             { status: 201 }
         );
     } catch (error: any) {
+        console.error("REGISTER ERROR:", error);
+
         return NextResponse.json(
-            { message: "An error occurred during registration" },
+            { message: error.message || "Registration failed" },
             { status: 500 }
         );
     }

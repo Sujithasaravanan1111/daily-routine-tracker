@@ -43,6 +43,7 @@ model User {
   password      String?
   streakCount Int @default(0)
   lastActive DateTime?
+  createdAt DateTime @default(now())
   accounts      Account[]
   sessions      Session[]
   routines      Routine[]
