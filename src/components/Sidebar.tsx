@@ -8,7 +8,9 @@ export default function Sidebar() {
     const pathname = usePathname();
     const { data: session } = useSession();
 
-    if (!session) return null;
+    const isAuthPage = pathname === "/login" || pathname === "/signup";
+
+    if (!session || isAuthPage) return null;
 
     const links = [
         { name: "Dashboard", path: "/" },

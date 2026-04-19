@@ -1,17 +1,24 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import TiltCard from "@/components/TiltCard";
-import { signIn } from "next-auth/react";
+import { signIn, useSession } from "next-auth/react";
 
 export default function SignupPage() {
+    const { data: session, status } = useSession();
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
     const router = useRouter();
+
+    useEffect(() => {
+        if (status === "authenticated") {
+            router.push("/");
+        }
+    }, [status, router]);
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
@@ -44,6 +51,10 @@ export default function SignupPage() {
             setError("An unexpected error occurred");
         }
     };
+
+    if (status === "loading" || status === "authenticated") {
+        return null;
+    }
 
     return (
         <div className="auth-container" style={{ margin: "-2.5rem -3rem", width: "100vw", height: "100vh", position: "fixed", top: 0, left: 0, zIndex: 50 }}>
