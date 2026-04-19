@@ -4,7 +4,8 @@ import bcrypt from "bcryptjs";
 
 export async function POST(req: Request) {
     try {
-        const { email, password, name } = await req.json();
+        const { email: rawEmail, password, name } = await req.json();
+        const email = rawEmail?.toLowerCase();
 
         if (!email || !password) {
             return NextResponse.json(
