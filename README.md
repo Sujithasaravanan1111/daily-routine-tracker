@@ -1,6 +1,6 @@
 ## 🌐 Live Demo
 
-👉https://daily-routine-tracker-zeta.vercel.app
+👉 https://daily-routine-tracker.vercel.app
 fix deploy 
 
 # 🚀 Daily Routine Tracker
@@ -68,21 +68,24 @@ npm run dev
 
 👉 http://localhost:3000
 
-## 📸 Screenshots
+## 📸 Screenshots Gallery
 
-### 🔐 Login Page
-![Login](public/screenshots/login.png)
+### 🔐 Authentication & Access
+| Login Page | Signup Page |
+|------------|-------------|
+| ![Login](public/screenshots/login.png) | ![Signup](public/screenshots/signup.png) |
 
-### 📊 Dashboard
-![Dashboard](public/screenshots/dashboard.png)
+### 📊 Main Features
+| Dashboard | Manage Routines |
+|-----------|------------------|
+| ![Dashboard](public/screenshots/dashboard.png) | ![Routines](public/screenshots/routines.png) |
 
-### 📅 Routine Tracker
-![Routine](public/screenshots/routine.png)
+### 🏋️ Tracking & Alerts
+| Workout Tracker | Reminders & Alarms |
+|-----------------|--------------------|
+| ![Workouts](public/screenshots/workouts.png) | ![Reminders](public/screenshots/reminders.png) |
 
-### ⏰ Reminder System
-![Reminder](public/screenshots/reminder.png)
-
-
+---
 💡 Future Enhancements
 🔔 Push Notifications (Background alerts)
 🌐 PostgreSQL Database Integration (Production Ready)
