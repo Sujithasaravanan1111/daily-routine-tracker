@@ -23,7 +23,7 @@ export async function PATCH(
 
         const { active } = await req.json();
 
-        const reminder = await prisma.reminder.updateMany({
+        const reminder = await prisma.reminder.update({
             where: { id, userId: user.id },
             data: { active },
         });
@@ -52,7 +52,7 @@ export async function DELETE(
         if (!user)
             return NextResponse.json({ message: "User not found" }, { status: 404 });
 
-        await prisma.reminder.deleteMany({
+        await prisma.reminder.delete({
             where: { id, userId: user.id },
         });
 

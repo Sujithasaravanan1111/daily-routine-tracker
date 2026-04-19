@@ -31,3 +31,24 @@ export async function PATCH(
         return NextResponse.json({ message: "Failed to update routine" }, { status: 500 });
     }
 }
+
+export async function DELETE(
+    req: NextRequest,
+    context: { params: Promise<{ id: string }> }
+) {
+    try {
+        const { id } = await context.params;
+
+        const session = await getServerSession(authOptions);
+        if (!session?.user?.email)
+            return NextResponse.json({ message: "Unauthorized" }, { status: 401 });
+
+        await prisma.routine.delete({
+            where: { id },
+        });
+
+        return NextResponse.json({ message: "Routine deleted" });
+    } catch {
+        return NextResponse.json({ message: "Failed to delete routine" }, { status: 500 });
+    }
+}

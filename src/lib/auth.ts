@@ -14,28 +14,35 @@ export const authOptions: NextAuthOptions = {
                 password: { label: "Password", type: "password" }
             },
             async authorize(credentials) {
-                if (!credentials?.email || !credentials?.password) {
-                    throw new Error("Invalid credentials");
+                try {
+                    if (!credentials?.email || !credentials?.password) {
+                        throw new Error("Email and password are required");
+                    }
+
+                    const user = await prisma.user.findUnique({
+                        where: { email: credentials.email }
+                    });
+
+                    if (!user || !user.password) {
+                        console.error(`AUTH ERROR: User not found for email ${credentials.email}`);
+                        throw new Error("Invalid credentials");
+                    }
+
+                    const isCorrectPassword = await bcrypt.compare(
+                        credentials.password,
+                        user.password
+                    );
+
+                    if (!isCorrectPassword) {
+                        console.error(`AUTH ERROR: Password mismatch for email ${credentials.email}`);
+                        throw new Error("Invalid credentials");
+                    }
+
+                    return user;
+                } catch (error: any) {
+                    console.error("NEXTAUTH AUTHORIZE ERROR:", error);
+                    throw error;
                 }
-
-                const user = await prisma.user.findUnique({
-                    where: { email: credentials.email }
-                });
-
-                if (!user || !user.password) {
-                    throw new Error("Invalid credentials");
-                }
-
-                const isCorrectPassword = await bcrypt.compare(
-                    credentials.password,
-                    user.password
-                );
-
-                if (!isCorrectPassword) {
-                    throw new Error("Invalid credentials");
-                }
-
-                return user;
             }
         })
     ],
